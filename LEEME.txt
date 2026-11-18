@@ -1,0 +1,64 @@
+ROMEC WEB PRO v4.2 — PAQUETE ESTÁTICO PARA NETLIFY (MODO CLARO)
+
+ESTE PROYECTO NO NECESITA NODE.JS, NPM, BASE DE DATOS, BACKEND NI PANEL ADMINISTRATIVO.
+
+PUBLICACIÓN DIRECTA:
+1. Entra a https://app.netlify.com/drop
+2. Arrastra el ZIP ROMEC_NETLIFY_DEPLOY.zip tal cual (index.html está en la raíz), o descomprímelo y arrastra la carpeta.
+3. Netlify te dará una URL *.netlify.app. Puedes cambiar el nombre en Site configuration > Change site name.
+
+PUBLICACIÓN CON GITHUB:
+- Build command: echo 'ROMEC static site ready'
+- Publish directory: .
+- Sin variables de entorno.
+
+CONTENIDO:
+- Hero con video propio (assets/video), animación de entrada y texto compacto.
+- Historia: ROMEC nació en San Ignacio de Velasco como servicios gráficos; los proyectos de diseño de stands en FEXPOSIV 2026
+  lo llevaron a la metalurgia, construcción, proyectos e ingeniería y mantenimiento agrícola. (Texto en borrador: revisar antes de publicar.)
+- Sección "Un solo equipo, cinco especialidades".
+- Íconos de Facebook y WhatsApp debajo del formulario.
+
+NOTAS:
+- El formulario arma un mensaje y abre WhatsApp. No guarda datos.
+- Las fuentes (Google Fonts) requieren internet; si no cargan, se usan fuentes de respaldo.
+- Seguridad: netlify.toml incluye Content-Security-Policy. Si agregas scripts, mapas o videos de otro sitio, hay que autorizarlos ahí.
+- Caché: fotos y video se guardan 7 días; HTML, CSS y JS se revalidan siempre.
+- 404.html se muestra si alguien abre un enlace inexistente.
+- Cuando tengas dominio definitivo conviene añadir og:image absoluto, canonical y sitemap.
+- WhatsApp: +591 77714619. Correo: romecserviciosgenerales@gmail.com.
+- Facebook: https://www.facebook.com/romecservicios
+
+NOVEDADES v4.3:
+- Sección "Nuestros clientes" (#clientes) con 4 logos en assets/clients/. Para agregar otro cliente, copia un <li class="client"> en index.html.
+- Fondos de planos de ingeniería (SVG propios en assets/bg/) y cuadrícula tipo AutoCAD en toda la página.
+- Puntero tipo AutoCAD (cruz con cuadro de selección, líneas guía y coordenadas). El efecto de soldadura fue retirado. Solo con mouse.
+
+NOVEDADES v4.4:
+- Logos de clientes en pasarela (se detiene al pasar el mouse). Para agregar un cliente, copia su <li class="client"> en las 4 repeticiones de la lista.
+- Servicio de pintura en general agregado (servicios, formulario y textos). Títulos de sección reducidos al 50%.
+- Fotos de fondo en Empresa, Servicios y Clientes (assets/bg/).
+- PENDIENTE al tener dominio: og:image debe ser una URL absoluta (https://tudominio/...) para que se vea al compartir en redes.
+
+NOVEDADES v4.6:
+- TikTok (@romec) en "Síguenos"; se quitó el ícono de WhatsApp de esa sección (el botón "WhatsApp directo" y el formulario siguen).
+- Se eliminaron textos y elementos repetidos (franja del hero, valores duplicados, cifras de historia, bloque CTA duplicado, contador de fotos, enlaces "Consultar servicio").
+- Fotos en pasarela de dos filas con efectos de ingeniería; números con efecto contador.
+
+NOVEDADES v4.7:
+- Galería "Algunos de nuestros proyectos realizados": 24 fotos ordenadas por servicio (Obras civiles, Mantenimiento industrial, Construcción y montaje, Diseño y gráfica). Las fotos nuevas están en assets/projects/.
+
+NOVEDADES v4.8:
+- 3 subpáginas de servicios: obras-civiles.html, mantenimiento-industrial.html, construccion-y-montaje.html (qué hacemos, proyectos realizados y WhatsApp directo).
+- Menú "Servicios" con submenú desplegable y botón "Ver servicio" en cada tarjeta de la portada.
+
+NOVEDADES v4.9:
+- "Mapa del sitio" en el pie de página de la portada y de las subpáginas.
+
+OPTIMIZACIÓN PARA CONEXIONES LENTAS (v5.0):
+- Peso total del sitio: ~1,3 MB (antes 5,1 MB). Carga inicial de la portada con conexión lenta: ~0,3 MB (sin video).
+- Fotos de proyectos reducidas a 560 px de ancho (WebP calidad 55); fondos y logos de clientes reducidos.
+- Video del hero: 640x360 (escritorio) y 426x240 (móvil), sin audio. NO se descarga en conexiones 2G/3G, con "ahorro de datos" o movimiento reducido: se muestra solo la imagen de portada.
+- Google Fonts se pide después de pintar la página (ya no bloquea la carga). Si no llega, se usan fuentes de respaldo.
+- CSS minificado. Se eliminó romec-logo.svg (no se usaba).
+- Para añadir nuevas fotos: máx. 560 px de ancho, WebP calidad ~55.
